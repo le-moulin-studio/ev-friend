@@ -1,7 +1,5 @@
 package com.lemoulinstudio.evfriend.domain;
 
-import java.util.List;
-
 public class Spot {
   
   public static Spot create(String name, String address) {

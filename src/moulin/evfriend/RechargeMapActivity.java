@@ -25,26 +25,13 @@ public class RechargeMapActivity extends MapActivity {
     Drawable drawable = this.getResources().getDrawable(R.drawable.battery32);
     BatteryOverlay batteryOverlay = new BatteryOverlay(drawable, this);
 
-//    batteryOverlay.addOverlay(new BatteryOverlayItem(
-//            new GeoPoint(25013596, 121465271),
-//            "Parking",
-//            "2 places at B1\nnon-free parking\nfree battery charging."));
-//    
-//    batteryOverlay.addOverlay(new BatteryOverlayItem(
-//            new GeoPoint(25033218, 121566261),
-//            "Parking",
-//            "X places at B1\nnon-free parking\nfree battery charging."));
-    
     List<BatteryOverlayItem> batteryOverlayItems = new ArrayList<BatteryOverlayItem>();
-    
     for (Spot spot : InitialMapData.spots)
       if (spot.geoLocation != null)
         batteryOverlayItems.add(new BatteryOverlayItem(
                 new GeoPoint((int) (spot.geoLocation.latitude * 1000000),
                              (int) (spot.geoLocation.longitude * 1000000)),
-                spot.name,
-                spot.address));
-    
+                spot.name, spot.address));
     batteryOverlay.addOverlays(batteryOverlayItems);
     mapOverlays.add(batteryOverlay);
   }
