@@ -9,9 +9,9 @@ public class InitialMapData {
     
     // Taipei city ...
     
-    Spot.create("停車站", null, new GeoLocation(25.033888, 121.566490)),
-    Spot.create("停車站", null, new GeoLocation(25.036350, 121.563118)),
-    Spot.create("停車站", null, new GeoLocation(25.013596, 121.465271)),
+    Spot.create("停車站", "Verified", new GeoLocation(25.033888, 121.566490)),
+    Spot.create("停車站", "Verified", new GeoLocation(25.036350, 121.563118)),
+    Spot.create("停車站", "", new GeoLocation(25.013596, 121.465271)),
     Spot.create("1. 士林區公所", "士林區中正路439號", new GeoLocation(25.092245, 121.520035)),
     Spot.create("2. 天文台", "士林區基河路363號", new GeoLocation(25.096001, 121.518959)),
     Spot.create("3. 捷運淡水線圓山站", "士林區圓山站出入口機車停車場", new GeoLocation(25.071276, 121.520149)),

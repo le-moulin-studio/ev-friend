@@ -2,19 +2,22 @@ package moulin.evfriend;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import com.google.android.maps.ItemizedOverlay;
+import com.google.android.maps.MapView;
+import com.google.android.maps.OverlayItem;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class BatteryOverlay extends ItemizedOverlay<BatteryOverlayItem> {
+public class BatteryOverlay extends ItemizedOverlay<OverlayItem> {
 
   private Context context;
-  private List<BatteryOverlayItem> items = new ArrayList<BatteryOverlayItem>();
+  private List<OverlayItem> items = new ArrayList<OverlayItem>();
 
   public BatteryOverlay(Drawable defaultMarker) {
-    super(boundCenterBottom(defaultMarker));
+    super(boundCenter(defaultMarker));
   }
 
   public BatteryOverlay(Drawable defaultMarker, Context context) {
@@ -22,18 +25,13 @@ public class BatteryOverlay extends ItemizedOverlay<BatteryOverlayItem> {
     this.context = context;
   }
 
-  public void addOverlay(BatteryOverlayItem batteryItem) {
-    items.add(batteryItem);
-    populate();
-  }
-
-  public void addOverlays(Collection<BatteryOverlayItem> batteryItems) {
-    items.addAll(batteryItems);
+  public void addOverlays(Collection<OverlayItem> items) {
+    this.items.addAll(items);
     populate();
   }
 
   @Override
-  protected BatteryOverlayItem createItem(int i) {
+  protected OverlayItem createItem(int i) {
     return items.get(i);
   }
 
@@ -44,7 +42,7 @@ public class BatteryOverlay extends ItemizedOverlay<BatteryOverlayItem> {
 
   @Override
   protected boolean onTap(int index) {
-    BatteryOverlayItem item = items.get(index);
+    OverlayItem item = items.get(index);
     AlertDialog.Builder dialog = new AlertDialog.Builder(context);
     dialog.setTitle(item.getTitle());
     dialog.setMessage(item.getSnippet());
@@ -52,4 +50,10 @@ public class BatteryOverlay extends ItemizedOverlay<BatteryOverlayItem> {
     
     return true;
   }
+
+  @Override
+  public void draw(Canvas canvas, MapView mapView, boolean shadow) {
+    if (!shadow) super.draw(canvas, mapView, shadow);
+  }
+  
 }
