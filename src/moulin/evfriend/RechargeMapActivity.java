@@ -19,7 +19,7 @@ public class RechargeMapActivity extends MapActivity {
     mapView.setBuiltInZoomControls(true);
 
     List<Overlay> mapOverlays = mapView.getOverlays();
-    Drawable drawable = this.getResources().getDrawable(R.drawable.recharge24);
+    Drawable drawable = this.getResources().getDrawable(R.drawable.parking24);
     BatteryOverlay batteryOverlay = new BatteryOverlay(drawable, this);
 
     List<OverlayItem> items = new ArrayList<OverlayItem>();
@@ -28,9 +28,14 @@ public class RechargeMapActivity extends MapActivity {
         items.add(new OverlayItem(
                 new GeoPoint((int) (spot.geoLocation.latitude * 1000000),
                              (int) (spot.geoLocation.longitude * 1000000)),
-                spot.name, spot.address));
+                spot.name,
+                spot.address + "\n" + spot.nbPlaces + "個位子"));
     batteryOverlay.addOverlays(items);
     mapOverlays.add(batteryOverlay);
+    
+    GeoPoint daAnSpot = new GeoPoint(25029781, 121536247);
+    mapView.getController().setCenter(daAnSpot);
+    mapView.getController().setZoom(12);
   }
 
   @Override
