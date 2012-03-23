@@ -2,14 +2,17 @@ package moulin.evfriend;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import com.google.android.maps.*;
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
+import com.google.android.maps.OverlayItem;
 import com.lemoulinstudio.evfriend.domain.Spot;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RechargeMapActivity extends MapActivity {
 
-  /** Called when the activity is first created. */
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class RechargeMapActivity extends MapActivity {
     batteryOverlay.addOverlays(items);
     mapOverlays.add(batteryOverlay);
     
+    // Center the view on the DaAn park on the first run.
     GeoPoint daAnSpot = new GeoPoint(25029781, 121536247);
     mapView.getController().setCenter(daAnSpot);
     mapView.getController().setZoom(12);

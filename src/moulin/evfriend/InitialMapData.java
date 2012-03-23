@@ -40,6 +40,7 @@ public class InitialMapData {
     Spot.create("萬華國中地下停車場", "臺北市萬華區西藏路201號地下", new GeoLocation(25.029261, 121.499603), 2),
     Spot.create("府前地下停車場", "臺北市信義區市府路1號", new GeoLocation(25.036121, 121.563118), 15),
     Spot.create("洛陽停車場", "臺北市萬華區環河南路1段1號", new GeoLocation(25.047552, 121.505005), 16),
+    Spot.create("新店捷運站地下停車場", "", new GeoLocation(24.956942, 121.537460), 6),
     
     // Taipei county ...
     
