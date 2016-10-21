@@ -46,11 +46,10 @@ public class InitialMapData {
     
     // Pingtung county ...
     
-    Spot.create("屏東監理站", "屏東縣屏東市忠孝路222號", new GeoLocation(22.692752, 120.4803738), 4),
-    Spot.create("家樂福屏東店", "屏東縣屏東市仁愛路188號", new GeoLocation(22.6826058, 120.4966614), 4),
-    Spot.create("屏東縣政府環境保護局", "屏東縣屏東市自由路271號", new GeoLocation(22.6739551, 120.4933431), 2),
-    Spot.create("屏東縣政府衛生局", "屏東縣屏東市自由路272號", new GeoLocation(22.6739551, 120.4933431), 2),
-    Spot.create("屏東縣政府衛生局", "屏東縣屏東市自由路272號", new GeoLocation(22.6739551, 120.4933431), 2),
+    Spot.create("屏東監理站", "屏東縣屏東市忠孝路222號", new GeoLocation(22.6927527, 120.4891285), 4),
+    Spot.create("家樂福屏東店", "屏東縣屏東市仁愛路188號", new GeoLocation(22.682721, 120.4979631), 4),
+    Spot.create("屏東縣政府環境保護局", "屏東縣屏東市自由路271號", new GeoLocation(22.6746456, 120.4965113), 2),
+    Spot.create("屏東縣政府衛生局", "屏東縣屏東市自由路272號", new GeoLocation(22.6751629, 120.4963772), 2),
       
     // Pingtung county ...
     
